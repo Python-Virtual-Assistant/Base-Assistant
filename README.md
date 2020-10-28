@@ -17,6 +17,13 @@ A base model for the Python Virtual Assistant
 - Now you need to install the following pip packages: **pyttsx3**, **SpeechRecognition** and **PyAudio**
 (If you are on Windows, you cannot install PyAudio normally, you have to install the actual .whl file that is provided, simply run: > *pip install .\PyAudio-0.2.11-cp38-cp38-win_amd64.whl)*
 
+- Finally, inside the Config directory, create a file called env_vars.py, in that file set 3 python variables:
+```
+wakeword = "WAKEWORD_FOR_THE_ASSISTANT"
+voice_recognition_energy_threshhold = (MAKE THIS AROUND 4000 IF YOUR MIC IS SENSITIVE & LOUD AND 2000 IF IT IS NOT)
+voice_recognition_dynamic_energy_threshhold = (I PREFER TO KEEP THIS OFF, EXPERIMENT AND SEE WHAT WORKS BEST)
+```
+
 - Now to start the assistant either manually start the assistant.py file or run either start.bat or start.sh
 
 # Development
