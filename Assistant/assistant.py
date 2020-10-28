@@ -38,14 +38,8 @@ def executeCommand(command):
 
 # main function, runs the voiceCommandActivation function until it picks up a command, the command is then executed
 while __name__ == "__main__":
-	try:
-		command = stt.voiceCommandActivation()
-		if(wakeword in command):
-			command = " ".join(command.split(" ")[(command.split(" ").index(wakeword) + 1):])
-			print("DETECTED: " + command)
-			executeCommand(command)
-	except:
-		if sys.exc_info()[0] == SystemExit:
-			sys.exit()
-		else:
-			pass
+	command = stt.voiceCommandActivation()
+	if(wakeword in command):
+		command = " ".join(command.split(" ")[(command.split(" ").index(wakeword) + 1):])
+		print("DETECTED: " + command)
+		executeCommand(command)

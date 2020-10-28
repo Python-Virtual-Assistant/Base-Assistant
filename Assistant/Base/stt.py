@@ -35,11 +35,14 @@ def convertSpeech(limit=None):
         else:
             audio = r.listen(source)
 
-    # recognize speech with the google speech recognition engine
-    result = r.recognize_google(audio)
+    try:
+        # recognize speech with the google speech recognition engine
+        result = r.recognize_google(audio)
 
-    # returns the resulting recognized speech
-    return result
+        # returns the resulting recognized speech
+        return result
+    except sr.UnknownValueError:
+        return ""
 
 # function to detect if the user said the wakeword and record the command that followed
 def voiceCommandActivation():
