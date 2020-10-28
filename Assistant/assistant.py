@@ -2,6 +2,7 @@ import sys
 
 from Assistant.Config.env_vars import wakeword
 from Assistant.Base import tts, stt
+from Assistant.Skills.repeat import repeat
 
 def powerOff():
 	tts.saySync("powering off")
@@ -21,7 +22,7 @@ commandsList = [
 	{
 		"command": "repeat",
 		"hasArgs": True,
-		"function": tts.sayAsync
+		"function": repeat
 	}
 ]
 
